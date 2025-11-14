@@ -1,4 +1,4 @@
-from stats import wcount_text
+from stats import letter_counter, wcount_text
 
 
 # Gets the contents of filepath as a string
@@ -14,3 +14,4 @@ def get_book_text(filepath):
 
 test = get_book_text("./books/frankenstein.txt")
 wcount_text(test)
+letter_counter(test)
