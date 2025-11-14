@@ -5,7 +5,20 @@ def get_book_text(filepath):
 
     with open(filepath) as f:
         file_contents = f.read()
-        print(file_contents)
+
+    return file_contents
 
 
-get_book_text("./books/frankenstein.txt")
+test = get_book_text("./books/frankenstein.txt")
+
+
+# Counts each individual word in the file.
+def wcount_text(string):
+    ws = string.split()
+    wcount = 0
+    for w in ws:
+        wcount += 1
+    print(f"Found {wcount} total words")
+
+
+wcount_text(test)
