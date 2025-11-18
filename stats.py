@@ -4,7 +4,8 @@ def wcount_text(string):
     wcount = 0
     for w in ws:
         wcount += 1
-    print(f"Found {wcount} total words")
+
+    return wcount
 
 
 def letter_counter(text):
@@ -12,5 +13,16 @@ def letter_counter(text):
     char_count = {}
     for c in chars:
         char_count[c] = char_count.get(c, 0) + 1
-    print(char_count)
     return char_count
+
+
+# Function for sorting dictionary key-value pairs into keys with the greatest value. Returns a list
+# of dictionaries containing the following structure: [{"char" : @ , "num" : 123}]
+
+
+def dict_sort(dict):
+    sorted_list = sorted(dict.items(), key=lambda i: i[1], reverse=True)
+    char_num = [{"char": c, "num": n} for c, n in sorted_list]
+    char_num_alpha = [i for i in char_num if i["char"].isalpha()]
+
+    return char_num_alpha
